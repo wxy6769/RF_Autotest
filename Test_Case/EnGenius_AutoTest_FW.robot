@@ -46,30 +46,30 @@ Repeat Up And Down
     #-------------------------------------------------------------------
     #----想辦法改成for-loop-case----------------------------------------
     #-------------------------------------------------------------------
-    : FOR    ${i}    IN RANGE    0    ${re}
-    \    Proceed With Login Page
-    \    Get Current FW Version    ${fwVersionID}
-    \    Turn Page to Upgrade
-    \    Choose File To Upgrade
-    \    Double Check And Wait
-    \    Upgrade Confirm
-    \    Log    Loading finish.
-    \    Reboot
-    \    Log    Reboot finish, then downgrade, it's round ${i}.
-    \    Proceed With Login Page
-    \    Get Current FW Version    ${fwVersionID}
-    \    Turn Page to Upgrade
-    \    Choose File To Downgrade
-    \    Double Check And Wait
-    \    Upgrade Confirm
-    \    Log    Loading finish.
-    \    Reboot
-    \    Log    Reboot finish, then upgrade, it's round ${i}.
+    FOR    ${i}    IN RANGE    0    ${re}
+        Proceed With Login Page
+        Get Current FW Version    ${fwVersionID}
+        Turn Page to Upgrade
+        Choose File To Upgrade
+        Double Check And Wait
+        Upgrade Confirm
+        Log    Loading finish.
+        Reboot
+        Log    Reboot finish, then downgrade, it's round ${i}.
+        Proceed With Login Page
+        Get Current FW Version    ${fwVersionID}
+        Turn Page to Upgrade
+        Choose File To Downgrade
+        Double Check And Wait
+        Upgrade Confirm
+        Log    Loading finish.
+        Reboot
+        Log    Reboot finish, then upgrade, it's round ${i}.
 
 for loop test
     #Open browser    ${host}    ${browser}
-    : FOR    ${i}    IN RANGE    0    ${re}
-    \    Log    ${i}
+    FOR    ${i}    IN RANGE    0    ${re}
+        Log    ${i}
 
 *** Keywords ***
 Open Chrome
